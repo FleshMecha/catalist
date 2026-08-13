@@ -1,0 +1,7 @@
+{
+  "name": "catalist",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}
