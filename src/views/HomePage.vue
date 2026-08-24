@@ -14,15 +14,31 @@
       </ion-header>
 
       <div id="container">
-        <strong>Ready to create an app?</strong>
+        <strong>Test Test</strong>
         <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
       </div>
+
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Nicolas Bustamante</ion-card-title>
+            <ion-card-subtitle>Ready</ion-card-subtitle>
+          </ion-card-header>
+
+          <ion-card-content>
+              <ion-img
+                src="lain3.gif"
+                alt="Dancing Lain"
+              ></ion-img>
+          </ion-card-content>
+        </ion-card>
+
+
     </ion-content>
   </ion-page>
 </template>
 
 <script setup lang="ts">
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonImg } from '@ionic/vue';
 </script>
 
 <style scoped>
