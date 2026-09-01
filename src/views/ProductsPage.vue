@@ -22,7 +22,7 @@
         }
     }
 
-    onMounted(getProducts)
+    onMounted(refreshProducts)
 
     async function onUpdate() {
         await refreshProducts()
