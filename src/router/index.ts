@@ -5,12 +5,6 @@ import MainLayout from '@layouts/main_layout.vue';
 import HomePage from '../views/HomePage.vue';
 
 
-const app_routes = navigation.map(item => ({
-  path: item.route.replace('/app', ''),
-  name: item.id,
-  component: item.component
-}));
-
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -18,11 +12,11 @@ const routes: Array<RouteRecordRaw> = [
     redirect: '/app/home'
   },
   {
-    path: '/app',
+    path: '/app/',
     component: MainLayout,
     children: [
       ...navigation.map(item=>({
-        path: item.route.replace('/app',''),
+        path: item.route.replace('/app/',''),
         component: item.component,
         name: item.id
       }))
@@ -30,32 +24,6 @@ const routes: Array<RouteRecordRaw> = [
   }
 ];
 
-/*
-const routes: Array<RouteRecordRaw> = [
-  {
-    path: '/',
-    component: MainLayout,
-    children: [
-      {
-        path: '',
-        component: HomePage
-      },
-      {
-        path: '/home',
-        name: 'Home',
-        component: MainLayout,
-        children: [
-          {
-            path: '',
-            redirect: '/app/home'
-          },
-          ...app_routes
-        ]
-      }
-    ]
-  }
-]
-*/
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

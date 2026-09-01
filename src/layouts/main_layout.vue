@@ -1,5 +1,4 @@
 <template>
-    <ion-app>
         <CompMenu content-id="contenido_principal"/>
         <ion-page id="contenido_principal">
             <ion-tabs>
@@ -7,7 +6,6 @@
                 <CompTabs />
             </ion-tabs>
         </ion-page>
-    </ion-app>
 </template>
 
 <script setup lang="ts">

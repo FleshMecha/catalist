@@ -33,6 +33,8 @@ import {
 	IonList,
 	IonItem,
 	IonMenuToggle,
+    IonLabel,
+    IonIcon,
 } from '@ionic/vue'
 import { useRouter } from 'vue-router';
 import { get_menu } from '@/config/navigation';

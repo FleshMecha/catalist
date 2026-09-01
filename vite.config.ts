@@ -15,7 +15,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
-            '@layouts': fileURLToPath(new URL('./src/layouts', import.meta.url)),
+      '@layouts': fileURLToPath(new URL('./src/layouts', import.meta.url)),
+      'vue': 'vue/dist/vue.esm-bundler.js'
     },
   },
   test: {

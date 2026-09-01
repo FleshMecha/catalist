@@ -1,12 +1,12 @@
 <script setup lang = "ts">
     import { onMounted, ref } from 'vue'
-    import { useI18n } from 'vue-i18n'
+//    import { useI18n } from 'vue-i18n'
     import { IonList,IonItem,IonLabel,IonBadge } from '@ionic/vue';
     import CompPage from '@/components/structure/comp_page.vue'
     import CompSkeleton from '@/components/base/comp_skeleton.vue'
     import {getProducts, type Product} from '@/data/products'
 
-    const { t } = useI18n()
+//    const { t } = useI18n()
     const products = ref<Product[]>([])
     const loading = ref(true)
 
@@ -32,7 +32,7 @@
 </script>
 
 <template>
-    <CompPage :title="t('products.title')" :show-update="true" @update="onUpdate">
+    <CompPage title="productos" :show-update="true" @update="onUpdate">
         <CompSkeleton v-if="loading" />
         <ion-list v-else>
             <ion-item v-for="product in products" :key="product.id" :router-link="`/app/products/${product.id}`">
