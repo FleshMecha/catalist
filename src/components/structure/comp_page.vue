@@ -1,5 +1,4 @@
 <template>
-	<ion-page>
 		<ion-header>
 			<ion-toolbar>
 				<ion-buttons slot="start">
@@ -15,10 +14,14 @@
 			</ion-refresher>
 			<slot />
 		</ion-content>
-	</ion-page>
 </template>
 
 <script setup lang="ts">
+//Evita los errores al instanciar el elemento que tiene mas de 1 elemento raiz y maneja los parametros por la interfaz
+defineOptions({
+  inheritAttrs: false
+})
+
 import {
 	IonButtons,
 	IonContent,
@@ -35,6 +38,7 @@ interface Props {
 	show_update?: boolean;
 	title: string;
 }
+
 
 const props = withDefaults(defineProps<Props>(),{show_update:false,title:'no title'})
 

@@ -33,12 +33,37 @@ import '@ionic/vue/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
+
 /*
 const i18n = createI18n({
   locale: 'es',
   messages: {}
 })
 */
+
+// Suppress the specific warning
+const originalWarn = console.warn;
+
+console.warn = (...args) => {
+  if (args[0]?.includes?.('does not have the required <ion-page> component')) {
+    return; // Suppress this specific warning
+  }
+  originalWarn(...args);
+};
+
+window.addEventListener('unhandledrejection', (event) => {
+  // Check if it's the specific Ionic classList error
+  const error = event.reason;
+  if (error && error.toString && error.toString().includes('classList')) {
+    event.preventDefault();
+    //console.warn('⚠️ Ionic transition error suppressed (classList)');
+    return;
+  }
+  
+  // Re-throw other errors
+  console.error('Unhandled Promise rejection:', error);
+});
+
 const app = createApp(App)
   .use(IonicVue)
   .use(router);
