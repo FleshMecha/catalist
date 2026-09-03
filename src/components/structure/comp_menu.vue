@@ -11,7 +11,7 @@
                 <ion-menu-toggle 
                     v-for="item in menuItems" 
                     :key="item.id"
-                    @click="navigateTo(item.route)"
+                    @click="navigateTo(item.path)"
                 >
                     <ion-item>
                         <ion-icon :icon="item.icon" slot="start" />
@@ -45,7 +45,7 @@ interface Props {
 const props = defineProps<Props>();
 const router = useRouter();
 const menuItems = get_menu();
-function navigateTo(route:string){
-	router.push(route);
+function navigateTo(path:string){
+	router.push(path);
 }
 </script>

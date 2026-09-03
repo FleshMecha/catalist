@@ -1,6 +1,6 @@
 <template>
   <ion-tab-bar slot="bottom">
-    <ion-tab-button v-for="tab in tabs" :key="tab.id" :tab="tab.id" :href="tab.route">
+    <ion-tab-button v-for="tab in tabs" :key="tab.id" :tab="tab.id" :href="tab.path">
       <ion-icon :icon="tab.icon" />
       <ion-label>{{ tab.title }}</ion-label>
     </ion-tab-button>

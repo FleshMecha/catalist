@@ -4,7 +4,7 @@ import { homeOutline, pricetagOutline } from 'ionicons/icons';
 export interface NavigationItem {
     id: string;
     title: string;
-    route: string;
+    path: string;
     icon: any;
     order: number;
     component: Component;
@@ -14,7 +14,7 @@ export const navigation: NavigationItem[] = [
     {
         id: 'home',
         title: 'Inicio',
-        route: '/app/home',
+        path: '/app/home',
         icon: homeOutline,
         order: 1,
         component: () => import('@/views/HomePage.vue')
@@ -22,7 +22,7 @@ export const navigation: NavigationItem[] = [
     {
         id: 'products',
         title: 'Productos',
-        route: '/app/products',
+        path: '/app/products',
         icon: pricetagOutline,
         order: 2,
         component: () => import('@/views/ProductsPage.vue')
@@ -30,14 +30,14 @@ export const navigation: NavigationItem[] = [
     {
         id: 'cameras',
         title: 'Cámaras',
-        route: '/app/cameras',
+        path: '/app/cameras',
         order: 2,
         component: () => import('@/views/CamerasPage.vue')
     },
     {
         id: 'reports',
         title: 'Reportes',
-        route: '/app/reports',
+        path: '/app/reports',
         order: 3,
         component: () => import('@/views/ReportsPage.vue')
     }*/

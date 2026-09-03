@@ -16,7 +16,7 @@ const routes: Array<RouteRecordRaw> = [
     component: MainLayout,
     children: [
       ...navigation.map(item=>({
-        path: item.route.replace('/app/',''),
+        path: item.path.replace('/app/',''),
         component: item.component,
         name: item.id
       }))
